@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import MovieCard from './MovieCard'
 import MovieList from './MovieList'
 import Filter from './Filter'
+import AddMovieModal from './AddMovieModal'
 
 const App = () => {
 
@@ -37,14 +38,22 @@ const App = () => {
   const [titlefFilter, setTitleFilter] = useState("")
   const [ratingFilter, setRatingFilter] = useState("")
 
-  const handleAddMovie = () => {
-    const newMovie = {
-      title: "new movie",
-      description: "new movies description",
-      posterURL: "https://via.placeholder.com/300x400.png?text=New+Movie",
-      rating: "5/5",
-    };
-    setMovies([...movies, newMovie])
+  const [showModal, setShowModal] = useState(false)
+  const [newMovie, setNewMovie] = useState({
+    title:"",
+    description:"",
+    posterURL:"",
+    rating:"",
+  })
+
+  const handleAddMovie = () => setShowModal(true) 
+  const handleCloseModal = () => {
+    setShowModal(false)
+    setNewMovie({title:"", description:"", posterURL:"", rating:""})
+  }
+
+  const handleSubmitMovie = () => {
+    setMovies([...movies, {...newMovie, rating: Number(newMovie.rating)}])
   }
 
   const filteredMovies = movies.filter((movie) => {
@@ -65,6 +74,14 @@ const App = () => {
           setRatingFilter={setRatingFilter}
         />
         <MovieList movies={filteredMovies} onAddClick={handleAddMovie}/>
+
+        <AddMovieModal
+          isOpen={showModal}
+          onClose={handleCloseModal}
+          onSubmit={handleSubmitMovie}
+          movieData={newMovie}
+          setMovieData={setNewMovie}
+        />
       </div>
     </>
   )
