@@ -13,24 +13,31 @@ const App = () => {
           title: 'Minecraft',
           description: 'the minecraft movie',
           posterURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IPF0_k-c6i3b4REB1zAbce3aiOvUTrJfng&s',
+          trailerLink: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiVtLfO-uWOAxXJSPEDHZ49EbUQ3yx6BAgXEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DwJO_vIDZn-I&usg=AOvVaw2rh37aYPRoj6ji5GLmMni0&opi=89978449',
           rating: '2'
       },
       {
           title: 'Scary Movie',
           description: 'the minecraft movie',
           posterURL: 'https://upload.wikimedia.org/wikipedia/en/2/29/Movie_poster_for_%22Scary_Movie%22.jpg',
+          trailerLink: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiVtLfO-uWOAxXJSPEDHZ49EbUQ3yx6BAgXEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DwJO_vIDZn-I&usg=AOvVaw2rh37aYPRoj6ji5GLmMni0&opi=89978449',
+          
           rating: '4'
       },
       {
           title: 'Aquaman',
           description: 'the minecraft movie',
           posterURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxIl0vE09HM1flGc0EXYnG8h2OIylL5FsDzQ&s',
+          trailerLink: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiVtLfO-uWOAxXJSPEDHZ49EbUQ3yx6BAgXEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DwJO_vIDZn-I&usg=AOvVaw2rh37aYPRoj6ji5GLmMni0&opi=89978449',
+          
           rating: '2'
       },
       {
           title: 'Alien Romulus',
           description: 'the minecraft movie',
           posterURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjxYLdEbXtBlcwmzxs7mMkQ1KPf8t2EMSJmw&s',
+          trailerLink: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiVtLfO-uWOAxXJSPEDHZ49EbUQ3yx6BAgXEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DwJO_vIDZn-I&usg=AOvVaw2rh37aYPRoj6ji5GLmMni0&opi=89978449',
+          
           rating: '3'
       }
   ])
@@ -43,13 +50,14 @@ const App = () => {
     title:"",
     description:"",
     posterURL:"",
+    trailerLink:"",
     rating:"",
   })
 
   const handleAddMovie = () => setShowModal(true) 
   const handleCloseModal = () => {
     setShowModal(false)
-    setNewMovie({title:"", description:"", posterURL:"", rating:""})
+    setNewMovie({title:"", description:"", posterURL:"", trailerLink:"", rating:""})
   }
 
   const handleSubmitMovie = () => {
