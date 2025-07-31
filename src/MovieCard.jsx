@@ -25,14 +25,17 @@ const MovieCard = ({movie, isAddCard, onAddClick}) => {
 
     return(
         <>
+
+        <div onClick={() => {}} className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
         
-        <div className="bg-transparent border-8 border-blue-400 
-                        w-56 h-72 rounded-3xl 
-                        overflow-hidden relative">
-            <img src={movie.posterURL} alt={movie.title} className="w-full h-full object-cover"/>
-            <div className="absolute bottom-0 w-full bg-white 
-                            bg-opacity-80 text-center p-2">
-                <h1 className="text-xl">{movie.title}</h1>
+            <div className="bg-transparent border-8 border-blue-400 
+                            w-56 h-72 rounded-3xl 
+                            overflow-hidden relative">
+                <img src={movie.posterURL} alt={movie.title} className="w-full h-full object-cover"/>
+                <div className="absolute bottom-0 w-full bg-white 
+                                bg-opacity-80 text-center p-2">
+                    <h1 className="text-xl">{movie.title}</h1>
+                </div>
             </div>
         </div>
 
