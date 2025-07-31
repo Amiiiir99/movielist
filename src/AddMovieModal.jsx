@@ -52,6 +52,15 @@ const AddMovieModal = ({ isOpen, onClose, onSubmit, movieData, setMovieData}) =>
             />
 
             <input
+              type="text"
+              name="trailerLink"
+              placeholder="Trailer Link"
+              className="w-full p-2 border mb-2 rounded"
+              value={movieData.trailerLink}
+              onChange={handleChange}
+            />
+
+            <input
               type="number"
               name="rating"
               placeholder="Rating (0–10)"
