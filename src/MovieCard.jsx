@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({movie, isAddCard, onAddClick}) => {
+
+    const navigate = useNavigate()
 
     if (isAddCard){
 
@@ -26,7 +29,7 @@ const MovieCard = ({movie, isAddCard, onAddClick}) => {
     return(
         <>
 
-        <div onClick={() => {}} className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
+        <div onClick={() => navigate(`/movie/${movie.id}`, {state: {movie}})} className="cursor-pointer transform transition-transform duration-300 hover:scale-105">
         
             <div className="bg-transparent border-8 border-blue-400 
                             w-56 h-72 rounded-3xl 
