@@ -5,7 +5,7 @@ const MovieDetails = () =>{
     const {id} = useParams()
     const location = useLocation()
 
-    const movie = location.state?.movie || MovieList.find((m)=>m.id === id)
+    const movie = location.state?.movie || movies.find((m)=>m.id === id)
 
     if (!movie) return <div className="p-6">movie not found</div>
     
